@@ -1,0 +1,37 @@
+public class g {
+public static int Sorted_Insertion(int array[] ,int key, int n ,int capacity)  
+{
+    if(n>=capacity)
+    {return n;}
+    int i;
+    for(i=n-1;(i>=0&&array[i]>key);i--)
+        array[i+1] = array[i];
+        array[i+1]=key;
+    return (n+1);
+}
+ 
+public static void main(String[] args) {
+   int[] array = new int[20];
+   array[0]=10;
+   array[1]=20;
+   array[2]=30;
+   array[3]=40;
+   array[4]=50;
+   array[5]= 60;
+   array[6]=70;
+    int capacity = 20;
+    int n=7;
+    int key =15;
+    System.out.println("Before Insertion");
+    for(int i=0;i<n;i++)
+    {System.out.print(array[i]+" ");}
+   
+    n= Sorted_Insertion(array,key,n,capacity);
+    
+    System.out.println("After Insertion");
+    for(int i=0;i<n;i++)
+    {System.out.print(array[i]+" ");}
+ 
+
+}
+}
